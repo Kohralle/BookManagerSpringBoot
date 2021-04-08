@@ -29,7 +29,7 @@ class BookServiceTest {
         autoCloseable = MockitoAnnotations.openMocks(this);
         //serviceTesting = new BookService(repositoryTesting);
         // czy to jest równoważne z @InjectMocks?
-        //Czy @injectMocks automatycznie wskrzykuje dependencje w konstruktorze Service?
+        //Czy @injectMocks automatycznie wskrzykuje dependencje w konstruktorze Service?njdcjn
     }
 
     @AfterEach
