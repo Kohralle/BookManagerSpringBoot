@@ -45,9 +45,8 @@ class BookControllerTest {
     @AfterEach
     void tearDown() throws Exception {
         autoCloseable.close();
-        service.deleteAll();
-    }
 
+    }
 
    @Test
    void addBook() throws Exception {
