@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
@@ -14,7 +15,9 @@ public class BookService {
     private final BookRepository bookRepository;
 
     public List<Book> getAllbooks() {
-        return bookRepository.findAll();
+        List<Book> listOfBooks = bookRepository.findAll();
+        listOfBooks.sort(new IdSorter());
+        return listOfBooks;
     }
 
     public void addBook(Book book) {
@@ -59,5 +62,19 @@ public class BookService {
         }
 
         return List.of(book);
+    }
+
+    public void deleteAllBooks(){
+        bookRepository.deleteAll();
+    }
+}
+
+class IdSorter implements Comparator<Book>
+{
+    @Override
+    public int compare(Book b1, Book b2) {
+        System.out.println(b1.getId());
+        System.out.println(b2.getId());
+        return b2.getId().compareTo(b1.getId());
     }
 }

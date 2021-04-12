@@ -2,11 +2,11 @@ package com.matic.app.book;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
+import org.springframework.stereotype.Component;
 import java.util.List;
 
-@Configuration
+
+@Component
 public class InsertOnStartup {
     @Bean
     CommandLineRunner commandLineRunner(BookRepository repository){
